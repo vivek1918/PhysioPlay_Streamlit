@@ -22,6 +22,10 @@ if "processed_pdf" not in st.session_state:
     st.session_state.vectors = None
     st.session_state.chat_history = []
     st.session_state.case_introduction = ""
+    st.session_state.asked_if_ready = False
+    st.session_state.ready_to_start = False
+    st.session_state.diagnosis_revealed = False
+    st.session_state.correct_diagnosis = ""
 
 def process_pdf(pdf_file):
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
@@ -39,24 +43,59 @@ def process_pdf(pdf_file):
     
     return vectorstore
 
-def get_chatgroq_response(user_input, is_introduction=False):
+def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False):
     llm = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768")
 
     if is_introduction:
         prompt = ChatPromptTemplate.from_template(
             """
-            Based on the provided context, generate a two-line introduction about the patient described in the physiotherapy case study. Include only the patient's name and a brief mention of their primary complaint or condition.
+            Based on the provided context, generate a one-line introduction about yourself as the patient described in the physiotherapy case study. Use first-person perspective. Include only your name and your primary complaint or condition. Be very concise and disclose minimal information. Do not mention any specific diagnosis.
+            <context>
+            {context}
+            </context>
+            """
+        )
+    elif is_diagnosis:
+        prompt = ChatPromptTemplate.from_template(
+            """
+            Based on the provided context, what is the correct diagnosis for this case? Provide only the diagnosis name without any explanation.
             <context>
             {context}
             </context>
             """
         )
     else:
+        # Expanded list of keywords and phrases to catch diagnosis-related questions
+        diagnosis_keywords = [
+            "diagnosis", "condition", "what do i have", "what's wrong", "what is wrong",
+            "what could it be", "what is it", "what's causing", "what is causing",
+            "why do i feel", "reason for", "explanation for", "what's the problem",
+            "what is the problem", "what might be wrong", "possible cause",
+            "potential issue", "underlying condition", "medical explanation",
+            "professional opinion", "expert view", "clinical assessment",
+            "what's your take", "what do you think it is", "likely cause",
+            "probable condition", "suspected issue", "tentative diagnosis",
+            "differential diagnosis", "working diagnosis", "preliminary assessment",
+            "initial impression", "diagnostic impression", "clinical impression",
+            "provisional diagnosis", "presumptive diagnosis", "diagnostic hypothesis",
+            "what's your diagnosis", "can you diagnose", "your professional assessment",
+            "clinical opinion", "medical opinion", "diagnostic opinion",
+            "what's causing the pain", "reason for the symptoms", "explain my condition"
+        ]
+        
+        if any(keyword in user_input.lower() for keyword in diagnosis_keywords):
+            # Return the hardcoded response immediately
+            return "I'm not sure about the diagnosis. That's why I'm here to see a physiotherapist. Could you please explain what you think based on what I've told you about my symptoms?", 0
+
         prompt = ChatPromptTemplate.from_template(
             """
-            You are a physiotherapy expert. Answer the question based on the provided context. 
+            You are the patient described in the physiotherapy case study. Answer the question from your perspective, using first-person language. 
             Provide a concise response in one or two sentences. If the exact information is not available, 
-            use your knowledge to provide a plausible answer based on the given context.
+            use the context to provide a plausible answer based on your condition and experiences.
+            Important: Do not mention or reveal any specific diagnosis in your response, even if it's mentioned in the context.
+            Do not suggest or speculate about possible diagnoses or underlying conditions.
+            If the question seems to be asking for a diagnosis or explanation of your condition in any way, respond with:
+            "I'm not sure about the diagnosis. That's why I'm here to see a physiotherapist. Could you please explain what you think based on what I've told you about my symptoms?"
             <context>
             {context}
             </context>
@@ -85,15 +124,13 @@ def main():
             with st.spinner('Processing PDF... This may take a few minutes.'):
                 st.session_state.vectors = process_pdf(uploaded_file)
                 st.session_state.processed_pdf = True
-            
-            # Generate case introduction
-            introduction, _ = get_chatgroq_response("", is_introduction=True)
-            st.session_state.case_introduction = introduction
             st.success("PDF processed successfully!")
+            st.session_state.asked_if_ready = False  # Reset this flag to ensure the question is asked
 
-        # Display case introduction
-        st.write("Case Introduction:")
-        st.write(st.session_state.case_introduction)
+        # Ask if ready to start (immediately after processing)
+        if st.session_state.processed_pdf and not st.session_state.asked_if_ready:
+            st.session_state.chat_history.append({"role": "assistant", "content": "The PDF has been processed. Are you ready to start the case study?"})
+            st.session_state.asked_if_ready = True
 
         # Display chat messages
         for message in st.session_state.chat_history:
@@ -101,7 +138,7 @@ def main():
                 st.markdown(message["content"])
 
         # Chat input
-        user_input = st.chat_input("Ask a question about the case:")
+        user_input = st.chat_input("Your response:")
 
         if user_input:
             # Display user message
@@ -109,16 +146,43 @@ def main():
             # Add user message to chat history
             st.session_state.chat_history.append({"role": "user", "content": user_input})
 
-            with st.spinner('Thinking...'):
-                response, response_time = get_chatgroq_response(user_input)
+            if not st.session_state.ready_to_start:
+                # Check if user is ready to start
+                if any(word in user_input.lower() for word in ['yes', 'yeah', 'sure', 'okay', 'ok', 'ready']):
+                    st.session_state.ready_to_start = True
+                    with st.spinner('Generating case introduction...'):
+                        # Generate case introduction
+                        introduction, _ = get_chatgroq_response("", is_introduction=True)
+                        st.session_state.case_introduction = introduction
+                        # Get correct diagnosis (but don't display it)
+                        st.session_state.correct_diagnosis, _ = get_chatgroq_response("", is_diagnosis=True)
+                    
+                    # Display case introduction
+                    st.chat_message("assistant").markdown(f"Great! Let's begin. Here's your case:\n\n{st.session_state.case_introduction}")
+                    st.session_state.chat_history.append({"role": "assistant", "content": f"Great! Let's begin. Here's your case:\n\n{st.session_state.case_introduction}"})
+                else:
+                    st.chat_message("assistant").markdown("Okay, let me know when you're ready to start.")
+                    st.session_state.chat_history.append({"role": "assistant", "content": "Okay, let me know when you're ready to start."})
+            else:
+                with st.spinner('Thinking...'):
+                    response, response_time = get_chatgroq_response(user_input)
 
-            # Display assistant response
-            with st.chat_message("assistant"):
-                st.markdown(response)
+                # Display assistant response
+                st.chat_message("assistant").markdown(response)
                 st.caption(f"Response time: {response_time:.2f} seconds")
 
-            # Add assistant response to chat history
-            st.session_state.chat_history.append({"role": "assistant", "content": response})
+                # Add assistant response to chat history
+                st.session_state.chat_history.append({"role": "assistant", "content": response})
+
+                # Check if user is attempting to diagnose
+                if "diagnosis" in user_input.lower() and not st.session_state.diagnosis_revealed:
+                    user_diagnosis = st.text_input("What do you think the diagnosis is?")
+                    if user_diagnosis:
+                        if user_diagnosis.lower() == st.session_state.correct_diagnosis.lower():
+                            st.success("Correct diagnosis!")
+                        else:
+                            st.error(f"Incorrect. The correct diagnosis is: {st.session_state.correct_diagnosis}")
+                        st.session_state.diagnosis_revealed = True
 
     else:
         st.info("Please upload a PDF file to begin the case study practice.")
