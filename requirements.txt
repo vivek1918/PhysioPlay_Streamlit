@@ -1,0 +1,4 @@
+faiss-gpu
+PyMuPDF
+transformers
+torch
