@@ -1,4 +1,4 @@
-faiss-gpu
+faiss-cpu
 PyMuPDF
 transformers
 torch

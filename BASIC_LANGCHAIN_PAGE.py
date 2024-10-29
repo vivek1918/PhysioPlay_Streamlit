@@ -29,6 +29,7 @@ if "processed_pdf" not in st.session_state:
     st.session_state.diagnosis_revealed = False
     st.session_state.correct_diagnosis = ""
     st.session_state.selected_pdf = None
+    st.session_state.diagnosis_submitted = False
 
 def select_random_pdf(pdf_folder):
     pdf_files = [f for f in os.listdir(pdf_folder) if f.endswith('.pdf')]
@@ -118,7 +119,7 @@ def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False)
 
 # Main app
 def main():
-    st.title("Physiotherapy Case Study Practice")
+    st.title("PhysioPlay")
 
     pdf_folder = './data/'  # Update this to your PDF folder path
 
@@ -181,15 +182,20 @@ def main():
             # Add assistant response to chat history
             st.session_state.chat_history.append({"role": "assistant", "content": response})
 
-            # Check if user is attempting to diagnose
+            # Check if user wants to submit a diagnosis
             if "diagnosis" in user_input.lower() and not st.session_state.diagnosis_revealed:
-                user_diagnosis = st.text_input("What do you think the diagnosis is?")
-                if user_diagnosis:
-                    if user_diagnosis.lower() == st.session_state.correct_diagnosis.lower():
-                        st.success("Correct diagnosis!")
-                    else:
-                        st.error(f"Incorrect. The correct diagnosis is: {st.session_state.correct_diagnosis}")
-                    st.session_state.diagnosis_revealed = True
+                st.session_state.diagnosis_submitted = True
+
+    # Handle diagnosis submission
+    if st.session_state.diagnosis_submitted and not st.session_state.diagnosis_revealed:
+        user_diagnosis = st.text_input("What do you think the diagnosis is?")
+        if user_diagnosis:
+            if user_diagnosis.lower() == st.session_state.correct_diagnosis.lower():
+                st.success("Correct diagnosis!")
+            else:
+                st.error(f"Incorrect. The correct diagnosis is: {st.session_state.correct_diagnosis}")
+            st.session_state.diagnosis_revealed = True
+            st.info(f"Case study used: {os.path.basename(st.session_state.selected_pdf)}")
 
 if __name__ == "__main__":
     main()
