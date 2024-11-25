@@ -13,7 +13,7 @@ import os
 import random
 
 # Set page config
-st.set_page_config(page_title="Physiotherapy Case Study Practice", layout="wide")
+st.set_page_config(page_title="PhysioPlay", layout="wide")
 
 # Hardcoded API key
 GROQ_API_KEY = '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'
