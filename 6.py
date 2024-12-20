@@ -14,7 +14,7 @@ import random
 import re
 
 # Set page config
-st.set_page_config(page_title="Physiotherapy Case Study Practice", layout="wide")
+st.set_page_config(page_title="PhysioPlay", layout="wide")
 
 # Enhanced CSS for fixed button positioning
 st.markdown("""
@@ -264,9 +264,9 @@ def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False)
 
 def main():
     """Main application function with improved UI and persistent diagnosis button."""
-    st.title("Physiotherapy Case Study Practice")
+    st.title("PhysioPlay")
 
-    pdf_folder = '/content/drive/My Drive/dummy_caseStudies_IPD'
+    pdf_folder = './data/'
 
     # Initialize PDF processing
     if not st.session_state.processed_pdf:
