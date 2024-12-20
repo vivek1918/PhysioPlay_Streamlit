@@ -29,14 +29,17 @@ def add_to_index(cpu_index, embeddings):
     # Ensure embeddings are in the correct format
     cpu_index.add(np.array(embeddings, dtype=np.float32))  # Convert to float32 if not already
 
-# Example usage
-if __name__ == "__main__":
-    # Create a FAISS index for 768-dimensional vectors
-    index = create_faiss_index(dimension=768)
+def search_index(cpu_index, query, top_k=5):
+    """
+    Search the FAISS index for the nearest neighbors of the query vector.
 
-    # Generate random embeddings (for testing purposes)
-    embeddings = np.random.rand(1000, 768).astype('float32')  # 1000 random 768-dim vectors
-    add_to_index(index, embeddings)
+    Args:
+        cpu_index (faiss.Index): The FAISS index to search.
+        query (np.ndarray): The query vector, shape (1, dimensions).
+        top_k (int): The number of nearest neighbors to retrieve.
 
-    # Output the number of embeddings in the index
-    print("Number of embeddings in index:", index.ntotal)
+    Returns:
+        List[Tuple[int, float]]: A list of tuples containing the indices and distances of the nearest neighbors.
+    """
+    distances, indices = cpu_index.search(np.array(query, dtype=np.float32).reshape(1, -1), top_k)
+    return list(zip(indices[0], distances[0]))  # Return a list of (index, distance) tuples

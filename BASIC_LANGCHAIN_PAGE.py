@@ -14,7 +14,7 @@ import random
 import replicate
 
 # Set page config
-st.set_page_config(page_title="Physiotherapy Case Study Practice", layout="wide")
+st.set_page_config(page_title="PhysioPlay", layout="wide")
 
 # Hardcoded API key
 REPLICATE_API_TOKEN  = st.secrets["REPLICATE_API_TOKEN "]
