@@ -8,3 +8,9 @@ pypdf
 langchain_groq
 langchain_openai
 langchain_groq
+sentence-transformers
+tempfile
+python-time
+os-sys
+random2
+regex
