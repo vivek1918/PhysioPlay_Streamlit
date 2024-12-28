@@ -4,7 +4,7 @@ langchain
 langchain_community
 langchain_core
 huggingface_hub
-pypdf2
+pypdf
 langchain_groq
 langchain_openai
 langchain_groq
