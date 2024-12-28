@@ -66,7 +66,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Hardcoded API key
-GROQ_API_KEY = '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'
+GROQ_API_KEY = st.secrets['GROQ_API_KEY']
 
 # Enhanced list of diagnostic/medical keywords and patterns
 DIAGNOSTIC_PATTERNS = {
