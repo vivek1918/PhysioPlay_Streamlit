@@ -14,8 +14,6 @@ import random
 import re
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
 
 # Set page config
 st.set_page_config(page_title="PhysioPlay", layout="wide")
@@ -70,7 +68,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Get API key from environment variable
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
+
 
 # Enhanced list of diagnostic/medical keywords and patterns
 DIAGNOSTIC_PATTERNS = {
