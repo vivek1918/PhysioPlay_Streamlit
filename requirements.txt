@@ -5,5 +5,9 @@ langchain_community
 langchain_core
 huggingface_hub
 pypdf2
+<<<<<<< HEAD
 langchain_groq
 langchain_openai
+=======
+langchain_groq
+>>>>>>> 194b9a9e1fc7befc710dcf72fab65e5b7edd4ea9
