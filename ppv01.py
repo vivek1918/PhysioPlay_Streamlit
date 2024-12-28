@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -12,6 +12,10 @@ import time
 import os
 import random
 import re
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Set page config
 st.set_page_config(page_title="PhysioPlay", layout="wide")
@@ -65,8 +69,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Hardcoded API key
-GROQ_API_KEY = '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'
+# Get API key from environment variable
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Enhanced list of diagnostic/medical keywords and patterns
 DIAGNOSTIC_PATTERNS = {
@@ -188,9 +192,13 @@ def get_patient_deflection():
     ]
     return random.choice(deflections)
 
-def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False):
-    """Generate a response using the ChatGroq model with enhanced question filtering."""
-    llm = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768")
+def get_chatgpt_response(user_input, is_introduction=False, is_diagnosis=False):
+    """Generate a response using the ChatGPT model with enhanced question filtering."""
+    llm = ChatOpenAI(
+        model_name="gpt-3.5-turbo",
+        temperature=0.7,
+        api_key=OPENAI_API_KEY
+    )
 
     if is_introduction:
         prompt = ChatPromptTemplate.from_template(
@@ -349,9 +357,9 @@ def main():
             if any(word in user_input.lower() for word in ['yes', 'yeah', 'sure', 'okay', 'ok', 'ready']):
                 st.session_state.ready_to_start = True
                 with st.spinner('Preparing your case...'):
-                    introduction, _ = get_chatgroq_response("", is_introduction=True)
+                    introduction, _ = get_chatgpt_response("", is_introduction=True)
                     st.session_state.case_introduction = introduction
-                    st.session_state.correct_diagnosis, _ = get_chatgroq_response("", is_diagnosis=True)
+                    st.session_state.correct_diagnosis, _ = get_chatgpt_response("", is_diagnosis=True)
                 
                 response_text = f"Great! Let's begin.\n\n{st.session_state.case_introduction}"
                 st.chat_message("assistant").markdown(response_text)
@@ -368,7 +376,7 @@ def main():
                 })
         else:
             with st.spinner('Thinking...'):
-                response, response_time = get_chatgroq_response(user_input)
+                response, response_time = get_chatgpt_response(user_input)
 
             st.chat_message("assistant").markdown(response)
             st.caption(f"Response time: {response_time:.2f} seconds")
