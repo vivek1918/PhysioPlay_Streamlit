@@ -1,0 +1,111 @@
+{
+    "name": "Emma",
+    "age": 32,
+    "gender": "Female",
+    "occupation": "Software Developer",
+    "lifestyle": {
+      "activity_level": "Active",
+      "hobbies": ["Rock climbing", "Yoga"],
+      "diet": "Vegetarian, high protein intake",
+      "hydration": "Adequate, 2-3 liters/day",
+      "sleep_pattern": "6-7 hours per night",
+      "stress_level": "Moderate, due to work deadlines"
+    },
+    "chief_complaint": {
+      "description": "Pain in the right shoulder",
+      "onset": "Started 3 days ago during rock climbing.",
+      "progression": "Pain has worsened with activity and slightly improved with rest.",
+      "severity": "6/10 at rest, 8/10 during overhead movements"
+    },
+    "symptoms": {
+      "pain_location": "Anterior and lateral shoulder region",
+      "pain_type": "Sharp pain during movement, dull ache at rest",
+      "triggers": ["Overhead movements", "Reaching backward"],
+      "relief_factors": ["Rest", "Ice application"],
+      "accompanying_symptoms": [
+        "Clicking sensation during certain movements",
+        "Mild swelling around the joint"
+      ]
+    },
+    "functional_limitations": {
+      "work": "Mild discomfort while typing for extended periods.",
+      "daily_tasks": "Difficulty washing hair, lifting objects overhead, and dressing.",
+      "hobbies": "Unable to climb or perform yoga poses requiring arm elevation."
+    },
+    "medical_history": {
+      "previous_injuries": ["Mild lower back pain", "Ankle sprain during jogging (3 years ago)"],
+      "medications": "Occasional use of ibuprofen for lower back pain.",
+      "family_history": "No hereditary musculoskeletal or connective tissue disorders."
+    },
+    "social_history": {
+      "living_situation": "Lives alone with a cat.",
+      "support_system": "Friends are available for help occasionally.",
+      "smoking_status": "Non-smoker",
+      "alcohol_consumption": "Occasional, 1-2 glasses of wine per week"
+    },
+    "physical_exam": {
+      "observation": {
+        "appearance": "Mild swelling over the shoulder; no visible discoloration.",
+        "posture": "Slight forward shoulder posture noted."
+      },
+      "range_of_motion": {
+        "active": "Limited in abduction and external rotation.",
+        "passive": "Mild pain with end-range external rotation."
+      },
+      "strength_testing": {
+        "external_rotation": "4/5, pain on resistance.",
+        "abduction": "3/5, significant pain at 90 degrees."
+      },
+      "palpation": {
+        "pain_points": "Tenderness over the anterior shoulder and lateral deltoid region."
+      },
+      "special_tests": {
+        "empty_can_test": "Positive",
+        "hawkins_kennedy_test": "Positive",
+        "neer_test": "Positive",
+        "obrien_test": "Negative"
+      }
+    },
+    "diagnostic_tests": {
+      "xray": {
+        "result": "No fractures or dislocations observed.",
+        "notes": "Slight narrowing of the subacromial space, indicating potential impingement."
+      },
+      "ultrasound": {
+        "result": "Inflammation and thickening of the supraspinatus tendon.",
+        "notes": "No complete tears detected; mild bursal fluid observed."
+      },
+      "mri": {
+        "result": "Partial-thickness tear of the supraspinatus tendon, with mild edema.",
+        "notes": "No labral tear detected; normal scapular alignment."
+      }
+    },
+    "observations": {
+      "key_findings": [
+        "Limited active and passive external rotation.",
+        "Positive Hawkins-Kennedy and Neer tests suggest subacromial impingement.",
+        "Partial-thickness tear of the supraspinatus visible on MRI."
+      ]
+    },
+    "differential_diagnoses": [
+      "Subacromial impingement syndrome",
+      "Rotator cuff tendinopathy",
+      "Scapular dyskinesis"
+    ],
+    "confirmed_diagnosis": [
+      "Subacromial impingement syndrome",
+      "Acute rotator cuff tendinopathy"
+    ],
+    "guidance_clues": {
+      "suggested_lines_of_inquiry": [
+        "Ask about the specific motion that caused the pain during climbing.",
+        "Investigate clicking sounds during movement and their location.",
+        "Correlate positive special test results with imaging findings."
+      ],
+      "useful_notes": [
+        "MRI findings of partial-thickness tear and mild edema align with clinical tests.",
+        "Absence of labral involvement excludes diagnoses like SLAP tears."
+      ]
+    }
+  }
+  

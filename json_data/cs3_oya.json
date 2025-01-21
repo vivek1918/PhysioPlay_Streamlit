@@ -1,0 +1,135 @@
+{
+    "name": "Oya",
+    "age": 55,
+    "gender": "Female",
+    "occupation": "Office Worker",
+    "lifestyle": {
+        "activity_level": "Previously Active, Currently Limited",
+        "hobbies": ["Walking", "Gardening", "Reading"],
+        "diet": "Balanced Mediterranean diet",
+        "hydration": "1.5-2 liters/day",
+        "sleep_pattern": "Severely disrupted due to night pain, averaging 4-5 hours",
+        "stress_level": "Moderate to High due to pain and work interference"
+    },
+    "chief_complaint": {
+        "description": "Severe right scapular/shoulder/arm pain extending to the wrist",
+        "onset": "Gradual onset over past few weeks",
+        "progression": "Rapidly worsening, especially at night",
+        "severity": "Deep ache 8-9/10, shooting pain 10/10"
+    },
+    "symptoms": {
+        "pain_location": "Right scapular region, shoulder, arm, extending to wrist",
+        "pain_type": "Deep constant ache with shooting pain and numb/heavy sensation",
+        "triggers": [
+            "Constant movement",
+            "Neck extension",
+            "Night time",
+            "Overhead activities",
+            "Looking up",
+            "Computer work"
+        ],
+        "relief_factors": [
+            "Slumped sitting",
+            "Hot baths",
+            "Rest",
+            "Supporting affected arm"
+        ],
+        "accompanying_symptoms": [
+            "Numbness and heaviness in right arm",
+            "Pins and needles sensation in fingers",
+            "Minimal morning stiffness",
+            "Occasional headaches"
+        ]
+    },
+    "functional_limitations": {
+        "work": "Significant difficulty with computer work and desk tasks",
+        "daily_tasks": "Struggle with dressing, washing hair, reaching overhead, cooking",
+        "hobbies": "Unable to garden or take regular walks"
+    },
+    "medical_history": {
+        "previous_injuries": "No significant prior injuries",
+        "medications": "Recently started over-the-counter pain relievers",
+        "family_history": "Mother with osteoarthritis, father with hypertension"
+    },
+    "social_history": {
+        "living_situation": "Lives with partner and two grown-up children",
+        "support_system": "Strong family support network",
+        "smoking_status": "Non-smoker",
+        "alcohol_consumption": "Occasional, 1-2 glasses of wine per week"
+    },
+    "physical_exam": {
+        "observation": {
+            "appearance": "Distressed, protective of right upper limb",
+            "posture": "Marked kyphotic upper thoracic spine, forward head posture"
+        },
+        "range_of_motion": {
+            "active": "Limited cervical flexion and extension, reduced shoulder mobility",
+            "passive": "Pain and resistance at end range of cervical movement"
+        },
+        "strength_testing": {
+            "upper_limb": "4-/5 right side grip strength",
+            "shoulder": "Limited by pain",
+            "cervical": "Limited by pain and apprehension"
+        },
+        "palpation": {
+            "pain_points": "Tender over cervical spine, paravertebral muscles, and right upper trapezius",
+            "tissue_quality": "Increased muscle tone in upper trapezius and levator scapulae"
+        },
+        "special_tests": {
+            "spurling_test": "Positive on right",
+            "cervical_extension": "Positive, reproduces symptoms",
+            "upper_limb_tension_test": "Positive on right",
+            "shoulder_impingement_tests": "Inconclusive due to pain"
+        }
+    },
+    "diagnostic_tests": {
+        "xray": {
+            "result": "Pending - urgent referral made",
+            "notes": "To assess cervical spine and rule out bony pathology"
+        },
+        "mri": {
+            "result": "Recommended",
+            "notes": "To evaluate suspected nerve root compression"
+        },
+        "nerve_conduction": {
+            "result": "To be scheduled",
+            "notes": "To assess severity of neural involvement"
+        }
+    },
+    "observations": {
+        "key_findings": [
+            "Severe night pain suggesting possible nerve root irritation",
+            "Positive neural tension signs",
+            "Kyphotic posture affecting cervical alignment",
+            "Clear neural symptoms with radicular pattern",
+            "Significant functional impact on daily activities"
+        ]
+    },
+    "differential_diagnoses": [
+        "Cervical radiculopathy",
+        "Frozen shoulder",
+        "Rotator cuff pathology",
+        "Thoracic outlet syndrome",
+        "Cervical spondylosis"
+    ],
+    "confirmed_diagnosis": [
+        "Primary: Cervical radiculopathy with neural component",
+        "Secondary: Unlikely frozen shoulder or rotator cuff pathology"
+    ],
+    "guidance_clues": {
+        "suggested_lines_of_inquiry": [
+            "Investigate work ergonomics and posture",
+            "Assess sleep position and pillow support",
+            "Evaluate pain management effectiveness",
+            "Screen for red flags given severity",
+            "Assess impact on mental health and daily function"
+        ],
+        "useful_notes": [
+            "Urgent imaging needed given severity of symptoms",
+            "Consider psychological impact of severe pain",
+            "Work modifications essential",
+            "Strong family support system can be leveraged for recovery",
+            "May need short-term work absence"
+        ]
+    }
+}
