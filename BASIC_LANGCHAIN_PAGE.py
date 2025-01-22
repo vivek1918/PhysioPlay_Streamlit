@@ -11,12 +11,13 @@ import tempfile
 import time
 import os
 import random
+import replicate
 
 # Set page config
 st.set_page_config(page_title="PhysioPlay", layout="wide")
 
 # Hardcoded API key
-GROQ_API_KEY = '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'
+REPLICATE_API_TOKEN  = st.secrets["REPLICATE_API_TOKEN "]
 
 # Initialize session state
 if "processed_pdf" not in st.session_state:
@@ -50,7 +51,7 @@ def process_pdf(pdf_path):
     return vectorstore
 
 def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False):
-    llm = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768")
+    llm = ChatGroq(replicate_api_token=REPLICATE_API_TOKEN, model_name="mixtral-8x7b-32768")
 
     if is_introduction:
         prompt = ChatPromptTemplate.from_template(

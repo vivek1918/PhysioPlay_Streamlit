@@ -1,4 +1,11 @@
 faiss-cpu
-PyMuPDF
-transformers
-torch
+streamlit
+langchain
+langchain_community
+langchain_core
+huggingface_hub
+pypdf
+langchain_groq
+langchain_openai
+langchain_groq
+sentence-transformers

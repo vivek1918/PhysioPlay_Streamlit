@@ -1,0 +1,134 @@
+{
+    "name": "Victor",
+    "age": 16,
+    "gender": "Male",
+    "occupation": "Pre-professional ballet dancer",
+    "lifestyle": {
+        "activity_level": "Highly Active",
+        "hobbies": ["Ballet", "Swimming", "Classical Piano"],
+        "diet": "High-protein, high-carb diet with 5-6 small meals daily",
+        "hydration": "3-4 liters/day, structured around training sessions",
+        "sleep_pattern": "Typically 8 hours planned but disturbed 1-2 times nightly due to pain",
+        "stress_level": "High, due to relocation, language barrier, and performance pressure"
+    },
+    "chief_complaint": {
+        "description": "Low back pain and right anterior groin pain",
+        "onset": "Sudden onset during a double cabriole jump",
+        "progression": "Constant post-incident, worsening with extended practice sessions",
+        "severity": "Back pain: 1-4/10 NPRS, Groin pain: 1-7/10 NPRS"
+    },
+    "symptoms": {
+        "pain_location": "Lower back and right anterior groin",
+        "pain_type": "Constant pain with morning stiffness, sharp during movements",
+        "triggers": [
+            "Hip flexion",
+            "Walking",
+            "Stairs",
+            "Lying prone",
+            "Grand plié",
+            "Arabesques"
+        ],
+        "relief_factors": [
+            "Rest",
+            "Supine position",
+            "Ibuprofen",
+            "Gentle stretching",
+            "Ice application"
+        ],
+        "accompanying_symptoms": [
+            "Morning stiffness lasting 15 minutes",
+            "No numbness or paresthesia",
+            "Mild muscle spasms in lower back",
+            "Decreased appetite after long practice sessions"
+        ]
+    },
+    "functional_limitations": {
+        "work": "Affects dance training (25-30 hours per week regime), particularly jumps and deep flexion movements",
+        "daily_tasks": "Difficulty with walking, stairs, putting on shoes, and sitting for long periods",
+        "hobbies": "Unable to perform ballet movements effectively, stopped swimming temporarily"
+    },
+    "medical_history": {
+        "previous_injuries": "No prior injuries",
+        "medications": "Currently taking Ibuprofen 400mg as needed",
+        "family_history": "Father has history of lower back problems, mother with mild scoliosis"
+    },
+    "social_history": {
+        "living_situation": "Lives in school dormitory, shared room with another dancer",
+        "support_system": "Regular video calls with family in Brazil, close friend group at ballet school",
+        "smoking_status": "Non-smoker",
+        "alcohol_consumption": "None"
+    },
+    "physical_exam": {
+        "observation": {
+            "appearance": "Athletic build, well-developed lower extremities",
+            "posture": "Slightly increased lumbar lordosis, anterior pelvic tilt"
+        },
+        "range_of_motion": {
+            "active": "Limited by pain in hip flexion, lumbar flexion reduced by 30%, extension by 50%",
+            "passive": "Hip flexion limited to 100 degrees, pain at end range"
+        },
+        "strength_testing": {
+            "hip_flexors": "4/5 with pain",
+            "quadriceps": "4+/5",
+            "core_stability": "Reduced during active testing",
+            "details": "General weakness noted in right hip complex"
+        },
+        "palpation": {
+            "pain_points": "Tender over L4-L5 region, right hip flexor complex, and anterior superior iliac spine",
+            "tissue_quality": "Mild muscle guarding in paraspinal muscles"
+        },
+        "special_tests": {
+            "neural_tension_testing": "Positive femoral nerve tension test on right",
+            "straight_leg_raise": "Negative bilaterally",
+            "faber_test": "Positive on right",
+            "thomas_test": "Positive for hip flexor tightness right side"
+        }
+    },
+    "diagnostic_tests": {
+        "xray": {
+            "result": "Pending - scheduled for tomorrow",
+            "notes": "Focus on lumbar spine and hip region"
+        },
+        "mri": {
+            "result": "Scheduled for next week",
+            "notes": "To evaluate suspected pars defect and neural involvement"
+        }
+    },
+    "observations": {
+        "key_findings": [
+            "High-intensity training schedule (25-30 hours/week)",
+            "Sleep disturbance due to pain",
+            "Morning stiffness pattern",
+            "Pain affects daily activities and training",
+            "Positive neural tension signs",
+            "Postural adaptations typical of classical dancers"
+        ]
+    },
+    "differential_diagnoses": [
+        "Lumbar radicular pain",
+        "Femoral nerve involvement",
+        "Pars defect",
+        "Hip labral tear",
+        "Iliopsoas strain"
+    ],
+    "confirmed_diagnosis": [
+        "Primary: Lumbar radicular pain with femoral nerve involvement",
+        "Secondary: Pars defect due to repetitive high-intensity activity"
+    ],
+    "guidance_clues": {
+        "suggested_lines_of_inquiry": [
+            "Investigate specific ballet movements that worsen symptoms",
+            "Assess sleep patterns and their impact on symptoms",
+            "Evaluate current pain management strategies",
+            "Explore training load and technique modifications",
+            "Assess psychological impact of injury on performance goals"
+        ],
+        "useful_notes": [
+            "Consider impact of recent relocation and training intensity",
+            "Need for imaging to confirm pars defect",
+            "Important to address language barrier in treatment planning",
+            "Training schedule modification crucial for recovery",
+            "Consider coordination with ballet instructors for modified practice routine"
+        ]
+    }
+}
