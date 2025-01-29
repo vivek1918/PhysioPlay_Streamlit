@@ -66,7 +66,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Hardcoded API key
-GROQ_API_KEY = st.secrets['GROQ_API_KEY']
+GROQ_API_KEY = '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'
 
 # Enhanced list of diagnostic/medical keywords and patterns
 DIAGNOSTIC_PATTERNS = {
@@ -266,7 +266,7 @@ def main():
     """Main application function with improved UI and persistent diagnosis button."""
     st.title("PhysioPlay")
 
-    pdf_folder = './data/'
+    pdf_folder = 'C:/Users/Vivek Vasani/Desktop/PhysioPlay/data'
 
     # Initialize PDF processing
     if not st.session_state.processed_pdf:
