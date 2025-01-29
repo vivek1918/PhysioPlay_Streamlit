@@ -1,6 +1,5 @@
 import streamlit as st
 from langchain_groq import ChatGroq
-from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -12,6 +11,7 @@ import time
 import os
 import random
 import re
+import json
 
 # Set page config
 st.set_page_config(page_title="PhysioPlay", layout="wide")
@@ -70,8 +70,8 @@ DIAGNOSTIC_PATTERNS = [
 ]
 
 # Initialize session state variables
-if "processed_pdf" not in st.session_state:
-    st.session_state.processed_pdf = False
+if "processed_json" not in st.session_state:
+    st.session_state.processed_json = False
     st.session_state.vectors = None
     st.session_state.chat_history = []
     st.session_state.case_introduction = ""
@@ -79,9 +79,9 @@ if "processed_pdf" not in st.session_state:
     st.session_state.ready_to_start = False
     st.session_state.diagnosis_revealed = False
     st.session_state.correct_diagnosis = ""
-    st.session_state.selected_pdf = None
+    st.session_state.selected_json = None
     st.session_state.diagnosis_submitted = False
-    st.session_state.pdf_name = None
+    st.session_state.json_name = None
     st.session_state.show_diagnosis_input = False
 
 def normalize_text(text):
@@ -112,24 +112,27 @@ def extract_primary_diagnosis(diagnosis_text):
     
     return ' '.join(cleaned_text.split()).strip()
 
-def select_random_pdf(pdf_folder):
-    """Select a random PDF file."""
-    pdf_files = [f for f in os.listdir(pdf_folder) if f.endswith('.pdf')]
-    if pdf_files:
-        selected_file = random.choice(pdf_files)
-        return os.path.join(pdf_folder, selected_file), selected_file
+def select_random_json(json_folder):
+    """Select a random JSON file."""
+    json_files = [f for f in os.listdir(json_folder) if f.endswith('.json')]
+    if json_files:
+        selected_file = random.choice(json_files)
+        return os.path.join(json_folder, selected_file), selected_file
     return None, None
 
-def process_pdf(pdf_path):
-    """Process PDF and create vector store."""
-    loader = PyPDFLoader(pdf_path)
-    documents = loader.load()
+def process_json(json_path):
+    """Process JSON and create vector store."""
+    with open(json_path, 'r') as file:
+        case_data = json.load(file)
+    
+    # Convert JSON data to a string format for processing
+    case_text = json.dumps(case_data)
     
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-    splits = text_splitter.split_documents(documents)
+    splits = text_splitter.split_text(case_text)
     
     embeddings = HuggingFaceEmbeddings()
-    return FAISS.from_documents(splits, embeddings)
+    return FAISS.from_texts(splits, embeddings)
 
 def is_diagnosis_question(text):
     """Check if the question is directly asking for a diagnosis."""
@@ -213,17 +216,17 @@ def main():
     """Main application function."""
     st.title("PhysioPlay")
 
-    pdf_folder = 'D:\\Crtl\\dummy_caseStudies_IPD'
+    json_folder = 'json_data'
 
-    # Initialize PDF processing
-    if not st.session_state.processed_pdf:
+    # Initialize JSON processing
+    if not st.session_state.processed_json:
         with st.spinner('Loading a new patient case...'):
-            selected_pdf_path, pdf_name = select_random_pdf(pdf_folder)
-            if selected_pdf_path:
-                st.session_state.selected_pdf = selected_pdf_path
-                st.session_state.pdf_name = pdf_name
-                st.session_state.vectors = process_pdf(selected_pdf_path)
-                st.session_state.processed_pdf = True
+            selected_json_path, json_name = select_random_json(json_folder)
+            if selected_json_path:
+                st.session_state.selected_json = selected_json_path
+                st.session_state.json_name = json_name
+                st.session_state.vectors = process_json(selected_json_path)
+                st.session_state.processed_json = True
                 st.success("New patient case ready!")
                 st.session_state.asked_if_ready = False
             else:
@@ -236,7 +239,7 @@ def main():
     
     # Display chat history
     with chat_container:
-        if st.session_state.processed_pdf and not st.session_state.asked_if_ready:
+        if st.session_state.processed_json and not st.session_state.asked_if_ready:
             st.session_state.chat_history.append({
                 "role": "assistant", 
                 "content": "Your next patient has arrived. Would you like to begin the consultation?"
@@ -273,7 +276,7 @@ def main():
                     st.success("Correct diagnosis!")
                 else:
                     st.error(f"Incorrect. The correct diagnosis was: {st.session_state.correct_diagnosis}")
-                st.info(f"Case Study: {st.session_state.pdf_name}")
+                st.info(f"Case Study: {st.session_state.json_name}")
                 st.session_state.diagnosis_revealed = True
 
     # Handle user input
