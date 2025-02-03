@@ -1,0 +1,137 @@
+{
+    "name": "Tom",
+    "age": 14,
+    "gender": "Male",
+    "sport": "Football – School level division 1",
+    "lifestyle": {
+      "activity_level": "Active",
+      "hobbies": ["Cycling", "Running", "Football"],
+      "diet": "Normal balanced diet, adequate protein intake for growth",
+      "hydration": "Adequate, 1.5-2 liters/day",
+      "sleep_pattern": "Able to sleep comfortably on side with a large pillow",
+      "stress_level": "Moderate, due to wanting to return to football training"
+    },
+    "chief_complaint": {
+      "description": "Stiff neck with intermittent numbness and tingling in the left hand, especially in the index and middle fingers.",
+      "onset": "Started 6 weeks ago after a collision during a football match.",
+      "progression": "Tingling occurs when carrying loads over 1 kg for ~3 minutes, resolves once load is removed.",
+      "severity": "3/10 pain at rest, worsens when carrying weight or engaging in certain neck movements."
+    },
+    "symptoms": {
+      "pain_location": "Left side of the neck, left index and middle fingers",
+      "pain_type": "Stiffness in the neck, tingling and mild numbness in fingers",
+      "triggers": ["Carrying loads over 1kg", "Football headers", "Certain neck movements"],
+      "relief_factors": ["Resting the arm", "Avoiding carrying heavy loads", "Sleep in a comfortable position"],
+      "accompanying_symptoms": ["Weakness in left hand, particularly in index and middle fingers"]
+    },
+    "functional_limitations": {
+      "work": "No impact on school tasks",
+      "sport": "Difficulty with ball handling and headers in football, limited strength in left hand",
+      "hobbies": "Unable to play football without limitations due to neck pain and hand weakness"
+    },
+    "medical_history": {
+      "previous_injuries": ["None related to neck or spine"],
+      "medications": "Occasional use of NSAIDs for pain relief",
+      "family_history": "No significant family history of musculoskeletal or neurological disorders"
+    },
+    "social_history": {
+      "living_situation": "Lives with parents",
+      "support_system": "Parents provide support, coach and teammates are also involved in recovery process",
+      "smoking_status": "Non-smoker",
+      "alcohol_consumption": "None"
+    },
+    "physical_exam": {
+      "observation": {
+        "appearance": "Normal body build, no obvious deformities or swelling",
+        "posture": "Slight forward head posture observed"
+      },
+      "range_of_motion": {
+        "active": "Limited right cervical flexion and rotation by ~25% due to muscle tightness and mild pain",
+        "passive": "Full extension of cervical spine, slight discomfort with right side flexion and rotation"
+      },
+      "strength_testing": {
+        "left_hand": "Mild weakness, particularly with index and middle fingers when carrying loads",
+        "upper_body": "Normal strength except for the left hand and wrist"
+      },
+      "palpation": {
+        "pain_points": "Tenderness along the left side of the cervical spine, trapezius, and left shoulder"
+      },
+      "special_tests": {
+        "spurling_test": "Negative",
+        "upper_limb_neural_tension": "Positive for mild tingling in left arm",
+        "valsalva_test": "Negative",
+        "cervical_traction": "Relieves tingling sensation"
+      }
+    },
+    "diagnostic_tests": {
+      "xray": {
+        "result": "No fractures or dislocations observed.",
+        "notes": "Normal cervical spine alignment."
+      },
+      "mri": {
+        "result": "No significant disc herniations or fractures, mild soft tissue strain.",
+        "notes": "Mild nerve root irritation likely contributing to symptoms."
+      }
+    },
+    "observations": {
+      "key_findings": [
+        "Limited right side flexion and rotation of the cervical spine due to muscle tightness and pain",
+        "Intermittent tingling and weakness in the left hand, especially with load-bearing",
+        "Normal strength and range of motion except in the left hand and cervical spine"
+      ]
+    },
+    "differential_diagnoses": [
+      "Cervical radiculopathy (brachial plexus injury)",
+      "Cervical muscle strain",
+      "Brachial plexus neuropathy",
+      "Cervical disc herniation (less likely based on imaging)"
+    ],
+    "confirmed_diagnosis": [
+      "Cervical radiculopathy due to nerve root irritation"
+    ],
+    "guidance_clues": {
+      "suggested_lines_of_inquiry": [
+        "Explore the mechanism of injury, particularly the cervical spine's forced position during the header.",
+        "Investigate whether carrying weight on the affected side may be exacerbating symptoms.",
+        "Assess postural habits and any contributing factors in his training or recreational activities."
+      ],
+      "useful_notes": [
+        "Tingling and weakness in the left hand are indicative of potential nerve irritation or compression.",
+        "Negative Spurling's test reduces the likelihood of a cervical disc herniation, supporting a radicular injury."
+      ]
+    },
+    "short_term_goals": [
+      "Achieve full range of motion in the neck without pain.",
+      "Eliminate tingling and weakness in the left hand when carrying light loads.",
+      "Return to football training and playing as soon as medically cleared."
+    ],
+    "long_term_goals": [
+      "Prevent further cervical spine injuries.",
+      "Improve posture and neck mechanics during headers and physical activity.",
+      "Gradually return to full football participation with proper strength and conditioning."
+    ],
+    "treatment_plan": {
+      "early": [
+        "Pain management with heat, ice, and NSAIDs as needed.",
+        "Begin gentle cervical stretches and mobility exercises, avoiding exacerbating positions.",
+        "Start strengthening exercises for the neck and shoulder to improve support for the cervical spine."
+      ],
+      "mid": [
+        "Incorporate controlled loading exercises such as cervical axial loading (using a soft ball or theraband for headers).",
+        "Work on neck proprioception and endurance (e.g., neck flexor and extensor strengthening).",
+        "Introduce functional exercises to simulate football movements, using progressively heavier objects (e.g., from beachball to matchball for header training)."
+      ],
+      "late": [
+        "Introduce sport-specific drills such as tackling with controlled load and football headers.",
+        "Increase weight-bearing exercises (e.g., leg press, weighted exercises).",
+        "Progress to sport-specific agility drills and positional training to prepare for return to full play."
+      ]
+    },
+    "return_to_sport_criteria": [
+      "VAS pain rating of 0/10 during sport-specific activities.",
+      "Full range of motion in the neck without pain.",
+      "No tingling or weakness in the left hand during activities.",
+      "Medical clearance based on performance in functional return-to-play tests."
+    ]
+  }
+  

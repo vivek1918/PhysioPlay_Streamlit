@@ -5,10 +5,10 @@ from typing import List
 import os
 import random
 
-from extract_pdf_text import extract_text_from_pdf  # Ensure this exists
-from generate_embeddings import get_pdf_embedding  # Ensure this exists
-from faiss_index import create_faiss_index, add_to_index, search_index  # Ensure these exist
-from random_selector import select_random_pdf  # Ensure this exists
+from references.extract_pdf_text import extract_text_from_pdf  # Ensure this exists
+from references.generate_embeddings import get_pdf_embedding  # Ensure this exists
+from references.faiss_index import create_faiss_index, add_to_index, search_index  # Ensure these exist
+from references.random_selector import select_random_pdf  # Ensure this exists
 
 app = FastAPI()
 

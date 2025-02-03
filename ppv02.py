@@ -3,8 +3,8 @@ import speech_recognition as sr
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
+from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
+from langchain.chains import create_retrieval_chain, LLMChain
 from langchain_community.vectorstores import FAISS
 import json
 import time
@@ -179,6 +179,7 @@ def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False)
             3. Use only simple language and keep your responses natural and conversational.
             4. Describe only how you feel, what you experience, or the results of any diagnostic tests if asked (like x-rays or MRIs).
             5. If asked about medical terms, help with clues but do not reveal the diagnosis.
+            6. Keep your responses precise and to the point, maximum 2 lines.
             Context: {context}
             Question: {input}
         """)
@@ -287,6 +288,16 @@ def main():
                 st.session_state.chat_history.append({"role": "assistant", "content": response})
                 st.caption(f"Response time: {response_time:.2f} seconds")
 
+                # Suggest a follow-up question
+                context_prompt = PromptTemplate(
+                    template="Based on the patient's last response: '{last_response}', suggest a follow-up question a physiotherapist might ask that a patient will understand. Make note the suggested question should be a ONE line question only.",
+                    input_variables=["last_response"]
+                )
+                llm = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768")
+                context_llm_chain = LLMChain(llm=llm, prompt=context_prompt)
+                follow_up_question = context_llm_chain.run({"last_response": response})
+                st.write("Suggested Follow-Up Question:", follow_up_question)
+
             if mic_button:
                 recognizer = sr.Recognizer()
                 with sr.Microphone() as source:
@@ -308,6 +319,16 @@ def main():
 
                     st.session_state.chat_history.append({"role": "assistant", "content": response})
                     st.caption(f"Response time: {response_time:.2f} seconds")
+
+                    # Suggest a follow-up question
+                    context_prompt = PromptTemplate(
+                        template="Based on the patient's last response: '{last_response}', suggest a follow-up question a physiotherapist might ask that a patient will understand. Make note the suggested question should be a ONE line question only.",
+                        input_variables=["last_response"]
+                    )
+                    llm = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768")
+                    context_llm_chain = LLMChain(llm=llm, prompt=context_prompt)
+                    follow_up_question = context_llm_chain.run({"last_response": response})
+                    st.write("Suggested Follow-Up Question:", follow_up_question)
                 except Exception as e:
                     st.error(f"Error: {str(e)}")
 

@@ -131,8 +131,8 @@ def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False)
     if is_introduction:
         prompt = ChatPromptTemplate.from_template("""
             Provide a very brief patient introduction in exactly 2 lines:
-            Line 1: "Hi, I'm [First Name]."
-            Line 2: State only the primary symptom in simple terms.
+            Hi, I'm [First Name].
+            State only the primary symptom in simple terms.
             Don't mention duration, medical terms, or any other details.
             
             Context: {context}
@@ -150,9 +150,9 @@ def get_chatgroq_response(user_input, is_introduction=False, is_diagnosis=False)
 
         prompt = ChatPromptTemplate.from_template("""
             Respond as the patient described in the case. Rules:
-            1. Always remember this is like a game, the user is trying to diagnose as per the persona by asking questions, so never ever spill out the diagnosis.
-            2. Use only simple language
-            3. Describe only how you feel or what you experience
+            1. Always remember the user is trying to diagnose as per the persona by asking questions, so never ever spill out the diagnosis.
+            2. Use only simple language 
+            3. Describe only how you feel or what you experience when asked about history or previous data with respect to pain or body part, answer with relevant data.
             4. Keep responses brief and natural
             5. If asked about medical terms, help with clues but never spill out the diagnosis.
             6. Reveal results of x-ray, mri or special tests or any other diagnostic tests if asked just make sure to not spill out the diagnosis.

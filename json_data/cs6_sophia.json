@@ -1,0 +1,155 @@
+{
+    "name": "Sophia",
+    "age": 15,
+    "gender": "Female",
+    "sport": "Club level volleyball, right handed",
+    "lifestyle": {
+      "activity_level": "Active",
+      "hobbies": ["Volleyball", "Strength training", "Swimming"],
+      "diet": "Normal balanced diet with adequate protein intake",
+      "hydration": "Adequate, 2 liters/day",
+      "sleep_pattern": "7-8 hours per night",
+      "stress_level": "Moderate, due to upcoming competitions and recent injury"
+    },
+    "chief_complaint": {
+      "description": "Right-sided anterior/superior shoulder pain, gradually worsening over the past 3 weeks.",
+      "onset": "Gradual onset after increased training volume, especially focused on improving serve action.",
+      "progression": "Pain has gradually worsened over time, particularly with serving, but not severe at rest.",
+      "severity": "Pain is 4/10 at rest, intensifies to 7/10 during overhead activities like serving."
+    },
+    "symptoms": {
+      "pain_location": "Anterior/superior aspect of the right shoulder",
+      "pain_type": "Dull ache at rest, sharp pain with overhead motions",
+      "triggers": ["Serving", "Overhead shoulder movements", "Training intensification"],
+      "relief_factors": ["Rest", "Ice application", "Pain-free exercises"],
+      "accompanying_symptoms": ["Slight winging of the scapula during shoulder elevation"]
+    },
+    "functional_limitations": {
+      "work": "No impact on school tasks",
+      "sport": "Difficulty serving and performing overhead volleyball actions, limited shoulder endurance",
+      "hobbies": "Unable to perform volleyball skills that require overhead motion without discomfort"
+    },
+    "medical_history": {
+      "previous_injuries": ["Facet joint strain at L4/5 last season, now recovered"],
+      "medications": "Occasional use of ibuprofen for pain management",
+      "family_history": "No significant family history of musculoskeletal or connective tissue disorders"
+    },
+    "social_history": {
+      "living_situation": "Lives with parents",
+      "support_system": "Parents support rehabilitation, coaches aware of the injury",
+      "smoking_status": "Non-smoker",
+      "alcohol_consumption": "None"
+    },
+    "physical_exam": {
+      "observation": {
+        "appearance": "Mild muscle imbalances noted, noticeable winging of the right scapula with shoulder elevation",
+        "posture": "Normal posture with slight forward shoulder tilt"
+      },
+      "range_of_motion": {
+        "active": "Full range of motion, but restricted in overhead motions with pain during the posterior arc",
+        "passive": "Full range of motion without significant discomfort except in the overhead position"
+      },
+      "strength_testing": {
+        "right_shoulder": "Normal strength except for pain-induced weakness during overhead movements",
+        "grip_strength": "Normal grip strength with slight weakness during unstable positions"
+      },
+      "palpation": {
+        "pain_points": "Tenderness on palpation of the antero/superior aspect of the right glenohumeral joint"
+      },
+      "special_tests": {
+        "anterior_apprehension_test": "Negative",
+        "posterior_apprehension_test": "Negative",
+        "sulcus_test": "Negative",
+        "gagey_test": "Negative",
+        "rotator_cuff_pain_provocation_tests": "Negative",
+        "serratus_anterior_testing": "Positive for true scapular winging",
+        "proprioception_tests": "Reduced proprioception during shoulder elevation"
+      }
+    },
+    "diagnostic_tests": {
+      "xray": {
+        "result": "Normal, no fractures or dislocations observed.",
+        "notes": "No significant bony pathology or glenoid labral tear."
+      },
+      "ultrasound": {
+        "result": "No rotator cuff tears or tendonitis observed, mild scapular muscle imbalance."
+      }
+    },
+    "observations": {
+      "key_findings": [
+        "Pain on palpation of the antero/superior aspect of the right glenohumeral joint",
+        "Scapular winging on right side during shoulder elevation",
+        "Reduced proprioception and slight muscle weakness during overhead movements"
+      ]
+    },
+    "differential_diagnoses": [
+      "Multidirectional shoulder instability (MDI)",
+      "Subacromial impingement syndrome",
+      "Rotator cuff tendinopathy",
+      "Scapular dyskinesis",
+      "Shoulder labral tear (unlikely based on imaging)"
+    ],
+    "confirmed_diagnosis": [
+      "Multidirectional shoulder instability (MDI) likely due to hypermobility"
+    ],
+    "guidance_clues": {
+      "suggested_lines_of_inquiry": [
+        "Investigate the increased training load and technique changes (serving focus) contributing to instability.",
+        "Assess any other signs of hypermobility or scapular dyskinesis.",
+        "Consider the possible impact of the recent growth spurt on joint stability."
+      ],
+      "useful_notes": [
+        "The Beighton score of 9/9 suggests generalized hypermobility, which may contribute to MDI.",
+        "Scapular winging and proprioception deficits are consistent with scapular dyskinesis and instability."
+      ]
+    },
+    "short_term_goals": [
+      "Reduce pain and discomfort during serving and overhead motions.",
+      "Improve scapular control and stability.",
+      "Return to full training within 3-4 weeks."
+    ],
+    "long_term_goals": [
+      "Prevent further episodes of shoulder instability.",
+      "Achieve a stable, pain-free shoulder for long-term participation in volleyball.",
+      "Optimize shoulder function to prevent re-injury during future training and competition."
+    ],
+    "treatment_plan": {
+      "early": [
+        "Isometric exercises for pain relief, focusing on rotator cuff and scapular muscles.",
+        "Introduce scapular stabilization exercises (e.g., wall slides, serratus anterior activation).",
+        "Pain management with ice and rest, particularly after intense training sessions."
+      ],
+      "mid": [
+        "Progress exercises to include resistance training for rotator cuff and shoulder stabilizers.",
+        "Begin perturbation exercises (e.g., using a flexbar for shoulder stability).",
+        "Incorporate controlled eccentric loading for rotator cuff muscles to improve shoulder stability."
+      ],
+      "late": [
+        "Functional exercises, including wall throws and overhead movements, to simulate volleyball motions.",
+        "Start dynamic, sport-specific drills for volleyball, focusing on overhead serves and movements with proper scapular control.",
+        "Introduce impact loading exercises like plyometric push-ups to simulate volleyball-specific actions."
+      ]
+    },
+    "injury_prevention_program": {
+      "early": [
+        "Scapular stabilization exercises to improve control during overhead movements.",
+        "Rotator cuff strengthening, focusing on eccentric loading and dynamic control.",
+        "Postural education to address any forward shoulder posture."
+      ],
+      "mid": [
+        "Proprioceptive training for shoulder joint stability (e.g., use of balance boards or unstable surfaces).",
+        "Strengthen upper back and shoulder stabilizers to counteract any muscle imbalances caused by hypermobility."
+      ],
+      "late": [
+        "Return to full volleyball training with emphasis on controlled, stable movements and injury prevention.",
+        "Gradual increase in training intensity with a focus on proper technique and biomechanics."
+      ]
+    },
+    "return_to_play_criteria": [
+      "Pain-free range of motion in all shoulder positions, especially overhead movements.",
+      "Scapular control and stability with no winging or instability during dynamic activities.",
+      "Improved proprioception and muscle strength (particularly in rotator cuff and scapular stabilizers).",
+      "Functional testing, including serving and overhead motions, without pain or discomfort."
+    ]
+  }
+  
