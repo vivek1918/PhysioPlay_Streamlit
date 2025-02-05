@@ -1,0 +1,135 @@
+{
+    "name": "John",
+    "age": 16,
+    "gender": "Male",
+    "sport": "Track cycling – Youth, Band 3",
+    "lifestyle": {
+      "activity_level": "Active",
+      "hobbies": ["Cycling", "Running"],
+      "diet": "Vegan for the last 2 years, moderate protein intake",
+      "hydration": "Adequate, 2-2.5 liters/day",
+      "sleep_pattern": "Historically poor sleeper, difficult to find comfortable position for neck",
+      "stress_level": "Moderate, due to upcoming championships and injury concerns"
+    },
+    "chief_complaint": {
+      "description": "Stiff and painful neck with intermittent biceps ache.",
+      "onset": "Started 48 hours ago following a sprint session on the velodrome track.",
+      "progression": "Pain has worsened with neck movement, particularly when looking left or upwards.",
+      "severity": "3/10 at rest, worse with neck movement (leftward or upwards)."
+    },
+    "symptoms": {
+      "pain_location": "Left side of the neck, intermittent ache in left biceps",
+      "pain_type": "Dull ache in neck, intermittent aching in biceps",
+      "triggers": ["Neck rotation to the left", "Looking upwards", "Biking to school"],
+      "relief_factors": ["Rest", "Avoiding certain neck movements"],
+      "accompanying_symptoms": ["Mild tightness in left neck muscles", "Discomfort while sleeping"]
+    },
+    "functional_limitations": {
+      "work": "No significant impact on daily tasks",
+      "sport": "Difficulty with full neck range during cycling, limited neck rotation affects performance",
+      "hobbies": "Unable to bike without discomfort; difficulty with full neck rotation"
+    },
+    "medical_history": {
+      "previous_injuries": ["None related to neck or spine"],
+      "medications": "None",
+      "family_history": "No history of musculoskeletal disorders"
+    },
+    "social_history": {
+      "living_situation": "Lives with parents",
+      "support_system": "Family support available",
+      "smoking_status": "Non-smoker",
+      "alcohol_consumption": "None"
+    },
+    "physical_exam": {
+      "observation": {
+        "appearance": "Slightly thin build, no visible deformities or swelling",
+        "posture": "Slight forward head posture, no apparent neck deformities"
+      },
+      "range_of_motion": {
+        "active": "Restricted left cervical extension, left side flexion, and left rotation (~25% restricted by pain)",
+        "passive": "Full cervical flexion, right rotation ~90%, mild pain with left rotation"
+      },
+      "strength_testing": {
+        "left_biceps": "Grade 5, pain-free"
+      },
+      "palpation": {
+        "pain_points": "Tenderness over the left side of the cervical spine and upper traps"
+      },
+      "special_tests": {
+        "cervical_spine_testing": {
+          "left_rotation": "Pain on left rotation, restricted range",
+          "neck_proprioception": "Mild deficits noted in cervical proprioception"
+        }
+      }
+    },
+    "diagnostic_tests": {
+      "xray": {
+        "result": "No fractures or dislocations observed.",
+        "notes": "Normal cervical spine alignment."
+      },
+      "mri": {
+        "result": "No significant pathology detected.",
+        "notes": "Mild soft tissue strain observed around left side of cervical spine."
+      }
+    },
+    "observations": {
+      "key_findings": [
+        "Limited cervical spine motion (left rotation and extension)",
+        "Mild tightness and muscle spasms on the left side",
+        "Intermittent bicep pain with neck movement",
+        "No signs of neurological deficits or severe injury"
+      ]
+    },
+    "differential_diagnoses": [
+      "Cervical muscle strain",
+      "Cervical radiculopathy (mild nerve irritation)",
+      "Cervical facet joint sprain",
+      "Cervical disc herniation (less likely given the absence of neurological signs)"
+    ],
+    "confirmed_diagnosis": [
+      "Cervical muscle strain with mild nerve irritation"
+    ],
+    "guidance_clues": {
+      "suggested_lines_of_inquiry": [
+        "Ask about bike fit and whether his head is often turned to one side during cycling.",
+        "Investigate frequency and intensity of sprint sessions on the track.",
+        "Explore sleep patterns and possible impact on recovery."
+      ],
+      "useful_notes": [
+        "Muscle spasms and mild nerve irritation likely due to neck position during cycling and the fall on ice.",
+        "Intermittent biceps pain suggests somatic referral from the neck musculature."
+      ]
+    },
+    "short_term_goals": [
+      "Obtain full range of neck motion.",
+      "Reduce pain and discomfort during cycling and neck movement.",
+      "Be able to compete at upcoming championships in 3 days."
+    ],
+    "long_term_goals": [
+      "Prevent further neck injuries.",
+      "Ensure proper bike fit and posture during cycling.",
+      "Promote recovery strategies to avoid chronic neck issues."
+    ],
+    "treatment_plan": {
+      "early": [
+        "Apply heat to the neck to reduce muscle tension.",
+        "Neck isometric exercises for strength without exacerbating pain.",
+        "Avoid cycling for the next few days to reduce strain on the neck."
+      ],
+      "mid": [
+        "Gradual introduction of neck stretches and mobility exercises.",
+        "Introduce light cycling to test tolerance, focusing on proper head positioning.",
+        "Sleep education and advice on improving sleep posture for neck recovery."
+      ],
+      "late": [
+        "Re-assess neck mobility and strength before reintroducing full cycling activities.",
+        "Consider bike modifications to reduce neck strain during training."
+      ]
+    },
+    "return_to_sport_criteria": [
+      "VAS pain rating of 3/10 or less during cycling.",
+      "Full range of motion in the neck without pain.",
+      "No increase in neck or bicep discomfort during test rides."
+    ]
+  }
+  
